@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:item/shield",
+  "textures": {
+    "particle": "gas:item/golden_apple_shield",
+    "shield": "gas:entity/shield/golden_apple_shield"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "gas:item/blocking/golden_apple_shield_blocking"
+    }
+  ]
+}

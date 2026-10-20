@@ -1,0 +1,1 @@
+PASS optional=true; 64 spawns; six tiers when present; equipment persistence/sync; old NPC; existing chest respected; trades preserved; native render layer; front/side/back screenshots.

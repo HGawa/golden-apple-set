@@ -1,0 +1,21 @@
+// 金苹果套装 · Forge 1.20.1
+// 注意：本机 repo1.maven.org / plugins.gradle.org 可能不可达，
+// 因此插件仓库优先走 maven.minecraftforge.net（ForgeGradle 发布在这里）。
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == 'net.minecraftforge.gradle') {
+                useModule("net.minecraftforge.gradle:ForgeGradle:${requested.version}")
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'MinecraftForge'
+            url = 'https://maven.minecraftforge.net/'
+        }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'golden_apple_set'

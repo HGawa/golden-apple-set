@@ -1,0 +1,6 @@
+{
+  "parent": "gas:item/golden_apple_bow",
+  "textures": {
+    "layer0": "gas:item/bow_pulling_2"
+  }
+}

@@ -1,0 +1,1 @@
+PASS: generated grass/dirt/stone layers, natural terrain and lavender sky; four placed block/item models; normal and silk drops; shovel/pickaxe tags and tool requirement; 16-item creative tab; screenshots.

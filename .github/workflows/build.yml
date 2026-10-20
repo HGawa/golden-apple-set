@@ -1,0 +1,31 @@
+name: Build Forge Mod
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build
+        working-directory: gas_mod
+        run: chmod +x gradlew && ./gradlew build --no-daemon
+      - name: Check resources
+        working-directory: gas_mod
+        run: |
+          python3 scripts/verify_mod.py
+          python3 scripts/verify_rendering.py
+          node scripts/build_leaf_armor.cjs --check
+          node scripts/build_realm_blocks.cjs --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: golden-apple-set
+          path: gas_mod/build/libs/*.jar

@@ -1,0 +1,1 @@
+PASS: spawn egg entity/consumption/tints/model and creative tab; legacy stock migration preserves used count; 64th trade succeeds, 65th blocked; timed restock to 64; golden dimension registration and travel both ways; 55296 sampled generated blocks gold or air only; non-flat terrain and lavender sky; actual client screenshots.

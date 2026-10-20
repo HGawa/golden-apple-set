@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金叶盔甲 · 实际资源预览</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#141914;color:#f1efdb;font:15px/1.6 'Segoe UI','Microsoft YaHei',sans-serif}main{max-width:1160px;margin:auto;padding:30px}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}h1{font-size:28px;font-weight:600;margin:0}p{margin:3px 0;color:#a6ae9c}.tag{color:#a9d588;font-size:12px;letter-spacing:2px}button{background:#293627;border:1px solid #55604a;border-radius:5px;color:#eff4df;padding:9px 16px;cursor:pointer}.layout{display:grid;grid-template-columns:1fr 1fr 260px;gap:14px}.panel{background:#1c241c;border:1px solid #354031;border-radius:8px;overflow:hidden}.label{padding:14px 18px;border-bottom:1px solid #354031;color:#d6dabb}.viewport{width:100%;height:470px;display:block;cursor:grab;touch-action:none}.aside{padding:18px}.aside h2{font-size:15px;margin:0 0 8px}.aside p{font-size:12px;margin-bottom:15px}.atlas{width:100%;image-rendering:pixelated;background:repeating-conic-gradient(#283026 0% 25%,#323a30 0% 50%) 0 0/12px 12px;border:1px solid #414c38;margin-bottom:14px}.icons{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}.icon{padding:12px 18px;display:flex;gap:18px;align-items:center}.icon img{width:64px;height:64px;image-rendering:pixelated}.icon span{font-size:12px;color:#a6ae9c}footer{margin-top:14px;display:flex;justify-content:space-between;color:#87927f;font-size:12px}.controls{margin-top:10px;font-size:12px;color:#a6ae9c}input{accent-color:#a2c879;vertical-align:middle;width:120px}@media(max-width:900px){.layout{grid-template-columns:1fr 1fr}.aside{grid-column:1/-1}.atlas{width:240px}.icons{grid-template-columns:1fr 1fr}}
+</style>
+<main>
+<header><div><div class="tag">GOLDEN APPLE SET / 1.1.3</div><h1>原版金甲 · 边缘缀叶</h1><p>叶片仅留在盔沿、肩缘、护腿外侧和靴口，金甲主体保持干净。</p></div><button id="toggle">对比原版金甲</button></header>
+<div class="layout">
+<section class="panel"><div class="label">正面 · 头盔 / 胸甲 / 护腿 / 靴子</div><canvas class="viewport" id="front" width="440" height="520"></canvas></section>
+<section class="panel"><div class="label">背面 · 左右肢体按原版镜像</div><canvas class="viewport" id="back" width="440" height="520"></canvas></section>
+<section class="panel aside"><h2>穿戴贴图</h2><p>64 × 32 像素 · 原版 UV<br>透明区域与原版逐像素一致</p><img class="atlas" id="layer1" alt="头盔胸甲靴子贴图"><p>Layer 1 · 头盔 / 胸甲 / 靴子</p><img class="atlas" id="layer2" alt="护腿贴图"><p>Layer 2 · 护腿</p><h2>边缘点缀，主体留白</h2><p>穿戴层仅 41 个绿色像素。<br>所有未点缀区域保留原版颜色。</p><div class="controls">拖动模型可旋转<br>缩放 <input id="zoom" type="range" min="9" max="14" value="12" step="0.5"></div></section>
+</div>
+<div class="icons" id="icons"></div>
+<footer><span>由实际 PNG 与原版立方体 UV 绘制的资源预览 · 非游戏截图</span><span>Minecraft 1.20.1 · Forge · gas</span></footer>
+</main>
+<script>
+const sources = {"layer1":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAACV0lEQVR42uVZO1LDMBDNQegpYajxFTgAHIGeinPQcAsqGnp6mpQcgYYSxDyN3+Z5o8h2syMszWhiRRtF+3v78W43Mz5fLtPH01WeeObkd7utDzCL8Zve0k96yDN93eaJvS4EAOa/X89S2g+H2YsAYOZZ6/shC4ET6y4FQPPH7AIDwGRm2AkAQukGA0zro+8TDLuJArVQuFkGPbNzgqjt12ibCXMa32nu2Ht8v0s3z9cHFxgnvsNedpHRNRQfcCYZxbP9h9A2gSHQApnUEEcfv7g/N23h0tinFrFXCpMUDunAPAVn/9GKAHBZMMKLlUyZtEyIVHje5HkOzsTZFJDmEBRyMy6wNLfn5ecsyvu5hVBxoa7CKIWgIXQzUWQN1mwqfHYzJsi9H1ILLhVqSZM6oBEBYISB6CRBakAAGlZDBOBT2BYEoLPZWqLmu2vpmXLzd35dqmGYiYbVEkxtMb1/Mo3W2sDTeyZAo2k6z7TaJCWjJybwDAym46EdI0t65EJck2FPXyrGuM9axK/h/xOGx+xS10zHY1DZX2Bk2JiRFpqnp7Z9JUqQsyxSBezW2qPU/TAX0PKWJj3pIEsXeQm9VosUWqnwqmFAGEhqsaNlc2n64sgLpEQf2g9QkDnVwcGnNkO0aerXJQso0jvth5bL7AcQZfGsmZaClDY4WO8r6HgfnzRTCyBlIOn8P/TFi5mgoDLXduETGj7V6zt6i+RM3tN77Ye+eDEUdSh9hMJiwnMtLUVm1faaZCosy6OG1eQZulTjus917ZLNpaxLGxWlsFMLRf+93P8D17BMokXNRb0AAAAASUVORK5CYII=","layer2":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAABMElEQVR42u1WMQ7CMAzkIeyMIGb4Ag8oT2Bn4h0s/IKJhZ2dhZEndGEEo1i96BpC1alSHZ8UtcapxF3scyYTh8PhcDgcDofD4XA4HMXjeV5IWPfjUp9FCvCRq0hdqQjFCRBIB/Kvy7RcAXgVUfKH2zb2PXqffeBfzoRAgfzmtBJ5rCPB8J6LQT68m2mR+W6mZFoE60oXThoxTl3jZr+JFuATVoIdFcCC2BGATphLnEsehFNBTLg+WgACaMwtkBEEsZkWAKH0HsAV0BKoEcycB4AgC/JjkolHdI3JdKTyk/O53CAC5+Z9+qe6iPHVOQokor+9ZR/9hfN81UaMxd+MosW4ZSCQkmiqBNXUmio9949CgNQTmCCT4THKBNlk0/2j8BgQgmnyPYIJc77v/iEq4AtUHx5iC1OdLwAAAABJRU5ErkJggg==","vanilla1":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAACIUlEQVRo3uVZu1HEMBB1IRTBXE4jFEIpFEJEQhUkhJRAciHoWI2feH6S13ayIyzN7Ix12rvTPmnffjxNG+Pz5T69P1+y2DMEn01nH2asjZ/0lr7TU5b09ZjF1oYAwIy/vt6l9PHwJ6MAYNc8n/qv0QYCxOZDAoDrbzIEB5iR2WABwEAZhgPKqc++DzIcJgp4ofC0BqqxW0B4655uN2GO4zuuOzaZB1xgFuMDGAPXYH6w34Sh9lz+g3S74JBWmLNn+DiMBBmy4Vj3vg8AGDiQaTcA8MZaVxm6SIj4u3rlGQQGiHMIXu+OAzxdbH4LUPXzEkLJhYYKowCBQ+hposgRVztV+BxmKLv3wllhN2lRB3QCgI0wEl0kSB0AwGE1BABNYXsAgKXbWsLz3aP6Xq3h1TAhAJVUd05tTdQ/kUZzbaD6unHTKbUG+Tz0bWCOddUPAYBrAS6euJZAMYV11m8VY1iHQTo3/18YPGeXPA/liGoDqB5hDLXQVB+nrZUoDChZJAMsc+5R8nqYC3B5yyfW6iLv0edqUSvPtfcTygFhJMnFDpfNLdHiSAFp6YeFlb2s2vqsaqBI84RvQFNfTj+0XGYSUhJTkuIGh5JQ1SHiLtEKSRWSFP8PffFSriCxMuZlwysnvBarq7dIcuVVX08/9MVLYVFh6YqF6QpvtbSYmfm0jyRTYVkeTrhKNMRneR1zb5Pdpax7GxWtsOOFov9e7t8AAQtm7Uukbj4AAAAASUVORK5CYII=","vanilla2":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAABIklEQVRo3u1Wuw3CMBTMIAyB6FmEQRiFQahomIKGkhFoKMHkWT7rYpyQKlKe7yQreXkvxZ3fr+sEQRAEQRAEQRAEQWgej/M22LmddvHZpACfcA3heYgiNCeAkTbyr8umXQH4NFPzqHvUPveBMZ8LgYyMpXu47zNBe6/ZIG/vbkrESECATLDvAXZw07Bx69FO8S4ygG84EpzIABbEjwB0w5zinPIgXAriqgQgQLS5BCqCwHZTAiBU7gGcAQOBkmDuegAIsiA/TbLoEVNjshyp/GR/zbeIwLV5/283KGOwOmeBeti3dzjm/sJ+XrVh4/A/qygxLhkIFEmkLEE2DabKzPhVCFBdpBJBJsNjlAlyky3jV9FjQAhNk/cIJsz+ufFLZMAXGMsgJipfHtYAAAAASUVORK5CYII=","helmet":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfElEQVR42mNgGJ6gKVbsPzZMtOaXG0X/v3oXjoLvTBP+b6/H958ozX//l/0HARANMwAkTtAQkAEgxSCN6JphmCgDQBjZ7yBNINsJGlBzIvq/32wbuCZ0DJIDqcFpgH62Otx2bAaAXAFSQzAQsWmGGUBUTGBTBDOEYRRgAACng60Pl+t+iQAAAABJRU5ErkJggg==","chestplate":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtUlEQVR42mNgGBSgKVbsf82J6P8gGoaxqYFhmFq4JEjAb7bN/7//y/6/eheO0wAQAKkBqQXpgUvqZ6vDNYPwy42iKIaA2CAxZDUgPSimwyRAGKQQZghMM7I8hitBnDvThOEKYU6FYWSNIDUgtSgG2Ovx/QdhkAQujTAMUgNTjxEbIEF8mkEYq0ZkA2BhgE0zyPlEGYALE2UAthCHaSbKAFhsYMOwAMSbrHEZQpRm9GhFxzTJiADEhGmWJtr2MAAAAABJRU5ErkJggg==","leggings":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjklEQVR42mNgGHSgKVbsPy5sr8f3n6Dmv//L/sMAiA3Cr96Fg/GdacL4DYEZgKwJGb/cKErYgJoT0SgaQBjGB8nhNQCkwG+2DYptIAxyOkgMJAdSg9MA/Wx1uG3INoHYMENBavB6AZtfcYnTxgBYwKF7AZs4TgPQ4xtmAMF0AAtxbAZgE8dqADImJD44AAAiRvLk+hUtZwAAAABJRU5ErkJggg==","boots":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVR42mNgGH6gKVbsPwzjE8MKak5E//ebbfP/7/+y//Z6fCgGgABIDqQGpwH62epgzdgMAIm9ehf+H6QGr/NhCtENAImhi2M1AJtCkg14uVGUdAOQFWEzACSGTQ6r5jvThDEMAInhNARmA7JmZAUwProaFANgivAFErIavIE5tAAA563KTrMXuLMAAAAASUVORK5CYII="};
+const tex = {}; let vanilla = false, zoom = 12;
+function pixels(url){return new Promise(resolve=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const g=c.getContext('2d');g.drawImage(im,0,0);resolve({w:im.width,h:im.height,data:g.getImageData(0,0,im.width,im.height).data})};im.src=url})}
+// Cubes reproduce vanilla HumanoidModel armor UV boxes; no custom geometry is
+// introduced in the mod. Left limbs mirror right-limb UVs as in 64x32 armor.
+function scene(){
+ const boxes=[];
+ const add=(x,y,z,w,h,d,u,v,inflate,texture,mirror=false,solid=null)=>boxes.push({x,y,z,w,h,d,u,v,inflate,texture,mirror,solid});
+ // Neutral underlay mannequin, so transparent eye/arm gaps remain visible.
+ add(0,-4,0,8,8,8,0,0,0,null,false,'#5c6253');
+ add(0,6,0,8,12,4,0,0,0,null,false,'#4e5548');
+ for(const side of [-1,1]){add(side*6,6,0,4,12,4,0,0,0,null,false,'#59614f');add(side*2,18,0,4,12,4,0,0,0,null,false,'#4e5548')}
+ const t1=tex[vanilla?'vanilla1':'layer1'],t2=tex[vanilla?'vanilla2':'layer2'];
+ add(0,-4,0,8,8,8,0,0,1,t1);
+ add(0,6,0,8,12,4,16,16,1,t1);
+ add(0,6,0,8,12,4,16,16,0.5,t2);
+ for(const side of [-1,1]){
+  add(side*6,6,0,4,12,4,40,16,1,t1,side===1);
+  add(side*2,18,0,4,12,4,0,16,0.5,t2,side===1);
+  add(side*2,18,0,4,12,4,0,16,1,t1,side===1);
+ }
+ return boxes;
+}
+function render(canvas,yaw){
+ const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+ ctx.clearRect(0,0,W,H);
+ const pitch=.18,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ function project([x,y,z]){const rx=x*cy+z*sy,rz=-x*sy+z*cy;return [W/2+rx*zoom,H/2+(y-8)*cp*zoom+rz*sp*zoom,rz*cp-(y-8)*sp]}
+ const polygons=[];
+ for(const b of scene()){
+  const {w,h,d,u,v,inflate:i}=b,xx=w/2+i,yy=h/2+i,zz=d/2+i;
+  const faces=[
+   {uv:[u+d,v+d,w,h],a:[-xx,-yy,zz],du:[2*xx,0,0],dv:[0,2*yy,0],shade:1},
+   {uv:[u+2*d+w,v+d,w,h],a:[xx,-yy,-zz],du:[-2*xx,0,0],dv:[0,2*yy,0],shade:.9},
+   {uv:[u,v+d,d,h],a:[-xx,-yy,-zz],du:[0,0,2*zz],dv:[0,2*yy,0],shade:.8},
+   {uv:[u+d+w,v+d,d,h],a:[xx,-yy,zz],du:[0,0,-2*zz],dv:[0,2*yy,0],shade:.85},
+   {uv:[u+d,v,w,d],a:[-xx,-yy,-zz],du:[2*xx,0,0],dv:[0,0,2*zz],shade:1.04},
+   {uv:[u+d+w,v,w,d],a:[-xx,yy,zz],du:[2*xx,0,0],dv:[0,0,-2*zz],shade:.7},
+  ];
+  for(const f of faces){
+   const [tu,tv,tw,th]=f.uv;
+   const point=(s,t)=>project(f.a.map((q,k)=>{let a=q+f.du[k]*s+f.dv[k]*t;if(k===0&&b.mirror)a=-a;return a+[b.x,b.y,b.z][k]}));
+   for(let y=0;y<th;y++)for(let x=0;x<tw;x++){
+    let rgb;
+    if(b.solid)rgb=[...b.solid.slice(1).matchAll(/../g)].map(m=>parseInt(m[0],16));
+    else {const p=((tv+y)*b.texture.w+tu+x)*4;if(b.texture.data[p+3]<128)continue;rgb=Array.from(b.texture.data.slice(p,p+3))}
+    const points=[point(x/tw,y/th),point((x+1)/tw,y/th),point((x+1)/tw,(y+1)/th),point(x/tw,(y+1)/th)];
+    polygons.push({points,depth:points.reduce((a,p)=>a+p[2],0)/4,color:`rgb(${rgb.map(n=>Math.min(255,Math.round(n*f.shade))).join(',')})`});
+   }
+  }
+ }
+ // Orthographic, pixel-face painter: texture transparency is respected.
+ polygons.sort((a,b)=>a.depth-b.depth);
+ ctx.fillStyle='#11170f';ctx.beginPath();ctx.ellipse(W/2,H/2+17*zoom,105,15,0,0,Math.PI*2);ctx.fill();
+ for(const p of polygons){ctx.fillStyle=p.color;ctx.strokeStyle=p.color;ctx.lineWidth=.5;ctx.beginPath();p.points.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.closePath();ctx.fill();ctx.stroke()}
+}
+const views=[{canvas:document.querySelector('#front'),yaw:-.38},{canvas:document.querySelector('#back'),yaw:Math.PI+.38}];
+function draw(){for(const view of views)render(view.canvas,view.yaw)}
+for(const view of views){let last=null;view.canvas.onpointerdown=e=>{last=e.clientX;view.canvas.setPointerCapture(e.pointerId)};view.canvas.onpointerup=()=>last=null;view.canvas.onpointermove=e=>{if(last===null)return;view.yaw+=(e.clientX-last)*.012;last=e.clientX;render(view.canvas,view.yaw)}}
+document.querySelector('#toggle').onclick=e=>{vanilla=!vanilla;e.target.textContent=vanilla?'返回绿叶金甲':'对比原版金甲';draw()};
+document.querySelector('#zoom').oninput=e=>{zoom=Number(e.target.value);draw()};
+for(const k of ['layer1','layer2'])document.getElementById(k).src=sources[k];
+const names={helmet:'金苹果头盔',chestplate:'金苹果胸甲',leggings:'金苹果护腿',boots:'金苹果靴子'};
+for(const [key,name]of Object.entries(names)){const card=document.createElement('div');card.className='panel icon';card.innerHTML=`<img src="${sources[key]}" alt="${name}"><div>${name}<br><span>16 × 16 · 物品图标</span></div>`;document.querySelector('#icons').append(card)}
+Promise.all(['layer1','layer2','vanilla1','vanilla2'].map(async k=>tex[k]=await pixels(sources[k]))).then(()=>{draw();window.previewReady=true});
+</script>
+</html>

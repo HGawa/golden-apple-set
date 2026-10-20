@@ -1,0 +1,1 @@
+PASS: 4 tools x 4 hand transforms; shield main/offhand idle/blocking/release; null entity and inactive stack; 4 tools mining speed 12 > netherite 9 on suitable blocks; wrong-tool speed 1; durability and harvest level preserved; shared sword tier; creative tab 11 ordered items, localized title, icon, global search and reachable page; 6 actual client screenshots.

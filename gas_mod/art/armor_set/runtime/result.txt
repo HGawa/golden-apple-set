@@ -1,0 +1,2 @@
+PASS
+Defense 20; toughness 8; full set +6 max health; actual regeneration I healing; client sync; no stacking; all missing slots; mixed armor; inventory only; clamp; expiry; other modifiers and stronger/infinite potions preserved; transient modifier not saved.

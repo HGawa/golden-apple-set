@@ -1,0 +1,53 @@
+// 金苹果套装 · 构建环境补丁（team-lead）
+// ============================================================================
+// 用途：当本机 `maven.minecraftforge.net` 不可达时，让 `gradle build` 仍能成功。
+//
+// 用法（在 gas_mod 目录下）：
+//   export JAVA_HOME="C:/Users/Administrator/.workbuddy/binaries/jdk/jdk-17.0.20.1+1"
+//   export PATH="$JAVA_HOME/bin:$PATH"
+//   C:/Users/Administrator/.workbuddy/bin/gradle/gradle-8.1.1/bin/gradle \
+//       -I scripts/build_with_mirror.gradle build --console=plain
+//
+//   ⚠ Gradle 必须用 8.1.1（Forge 1.20.1 官方 MDK 口径）。
+//     8.4+ 会让 ForgeGradle 的 detached configuration 丢仓库，报出误导性的
+//     "no repositories are defined"。
+//
+// 它做三件事，全部只在构建期生效，**不修改工程内任何文件**：
+//   1. 把 ForgeGradle 钉到 6.0.54 —— 镜像上的 maven-metadata 陈旧，
+//      动态区间 [6.0,6.2) 解析不到版本；钉死后可用本地缓存。
+//   2. 给插件解析与工程仓库挂上教育网镜像 mirrors.cernet.edu.cn/bmclapi/
+//      （它代理 Forge maven；官方 maven.minecraftforge.net 在本机被拦截）。
+//   3. 注意：ForgeGradle 自己创建的 `mavenDownloader_*` configuration 是空仓库，
+//      不走上面的镜像。若报 `... because no repositories are defined`，
+//      需手工把该制品投喂进 FG 的下载缓存（命名规范见下）：
+//        ~/.gradle/caches/forge_gradle/maven_downloader/<group 路径>/
+//            <artifact>/<version>/<artifact>-<version>[-<classifier>].jar  (+ .jar.md5)
+//      已知需要投喂过：net.minecraftforge:binarypatcher:1.1.1:fatjar
+//      （来源：https://mirrors.cernet.edu.cn/bmclapi/net/minecraftforge/binarypatcher/1.1.1/binarypatcher-1.1.1-fatjar.jar）
+// ============================================================================
+
+def MIRROR = 'https://mirrors.cernet.edu.cn/bmclapi/'
+def FG_VERSION = '6.0.54'
+
+settingsEvaluated { settings ->
+    settings.pluginManagement {
+        repositories {
+            maven { url = MIRROR }
+            maven { url = 'https://maven.minecraftforge.net/' }
+            gradlePluginPortal()
+        }
+        resolutionStrategy {
+            eachPlugin {
+                if (requested.id.id == 'net.minecraftforge.gradle') {
+                    useModule("net.minecraftforge.gradle:ForgeGradle:${FG_VERSION}")
+                }
+            }
+        }
+    }
+}
+
+allprojects { p ->
+    p.repositories {
+        maven { name = 'CernetBMCLAPI'; url = MIRROR }
+    }
+}

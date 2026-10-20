@@ -1,0 +1,22 @@
+// Optional client integration test. Its classes are never part of the mod JAR.
+allprojects { p ->
+    afterEvaluate {
+        def smoke = p.sourceSets.create('renderSmoke')
+        smoke.compileClasspath += p.sourceSets.main.compileClasspath + p.sourceSets.main.output
+        smoke.runtimeClasspath += smoke.compileClasspath
+        p.minecraft.runs.client {
+            property 'gas.renderSmoke', p.findProperty('gasSmoke') == null ? 'true' : 'false'
+            property 'gas.npcSmoke', p.findProperty('gasSmoke') == 'npc' ? 'true' : 'false'
+            property 'gas.realmSmoke', p.findProperty('gasSmoke') == 'realm' ? 'true' : 'false'
+            property 'gas.armorSmoke', p.findProperty('gasSmoke') == 'armor' ? 'true' : 'false'
+            property 'gas.backpackSmoke', p.findProperty('gasSmoke') == 'backpack' ? 'true' : 'false'
+            property 'gas.blockSmoke', p.findProperty('gasSmoke') == 'blocks' ? 'true' : 'false'
+            property 'gas.expectBackpacks', p.findProperty('gasExpectBackpacks') ?: 'false'
+            property 'gas.existingWorld', p.findProperty('gasExistingWorld') ?: ''
+            mods { gas { source smoke } }
+        }
+        p.tasks.matching { it.name == 'runClient' }.configureEach {
+            dependsOn p.tasks.named('compileRenderSmokeJava')
+        }
+    }
+}

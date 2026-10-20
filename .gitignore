@@ -1,0 +1,17 @@
+# Generated files and local dependencies
+**/.gradle/
+**/build/
+**/run/
+**/libs/
+**/__pycache__/
+*.pyc
+*.log
+*.jar
+!gas_mod/gradle/wrapper/gradle-wrapper.jar
+.idea/
+.vscode/
+*.iml
+.env
+.env.*
+*.pem
+*.key

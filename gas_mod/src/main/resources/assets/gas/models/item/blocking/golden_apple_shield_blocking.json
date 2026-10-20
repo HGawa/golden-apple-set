@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/shield_blocking",
+  "textures": {
+    "particle": "gas:item/golden_apple_shield",
+    "shield": "gas:entity/shield/golden_apple_shield"
+  }
+}

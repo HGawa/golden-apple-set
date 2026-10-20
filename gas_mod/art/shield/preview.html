@@ -1,0 +1,46 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>金苹果盾 · 模型与材质</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#151a16;color:#eee9cf;font:15px/1.6 'Microsoft YaHei',sans-serif}main{max-width:1160px;margin:auto;padding:30px}h1{margin:0;font-size:27px}p{color:#aab09b;margin:8px 0 22px}.layout{display:grid;grid-template-columns:1fr 1fr 260px;gap:16px}.panel,.tool{background:#21291e;border:1px solid #3e4934;border-radius:8px}.title{padding:14px 18px;border-bottom:1px solid #3e4934}canvas{width:100%;height:440px;display:block}.aside{padding:18px}.aside img{width:220px;image-rendering:pixelated;background:repeating-conic-gradient(#283026 0% 25%,#323a30 0% 50%) 0 0/12px 12px}.aside p{font-size:13px}.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}.tool{display:flex;align-items:center;gap:16px;padding:16px}.tool img{width:64px;height:64px;image-rendering:pixelated}small{display:block;font-size:11px;color:#aab09b}footer{margin-top:18px;color:#95a18b;font-size:12px}label{font-size:12px;letter-spacing:2px;color:#c5d796}</style>
+<main><label>GOLDEN APPLE SET / 1.1.4</label><h1>金苹果盾 · 盾面、盾背与握柄</h1><p>金色包边、苹果徽记与少量叶片；背面为木板，握柄独立使用木纹贴图。</p>
+<div class="layout"><section class="panel"><div class="title">盾面 · 原版立体盾模型</div><canvas id="front" width="440" height="480"></canvas></section><section class="panel"><div class="title">盾背 · 木板与立体握柄</div><canvas id="back" width="440" height="480"></canvas></section><section class="panel aside"><div>64 × 64 · 专用 UV 贴图</div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABF0lEQVR42u3YMQrCMBTG8d6jB9DNwVXcXBw6uTl4AG9QvYkXcPMaOnsKLyAOQjTCg1gaS0pj0+T/g6A0gfZ9jU9tlr09b6VyGcdd7jSyH1zWeuFaTNthO/9qmquyGCt57S2ANndfX7B58bb3gwlgf16r4jBT98via+hjei7qAKR4WwASgqyXOR1KdX3dXPAB6AIn25G1GD2n13S9A4JpgvIZtwUgd7RtAL6a6GACaFrTNP/3ADan+eczn2wA+qRJ7gCzy9d1/KgDsH29yfHom6BZaNcBZKGy7YDHdZleANUQzOKTCcBsftUwkgnAxw8hAiCAyALo6u8wOyC0AP79SCyYAPp6KAoAAAAAAAAAAAAAAAAAAABPXsG4lMgB4X/BAAAAAElFTkSuQmCC"><p>12 个模型面均有对应纹理：<br>盾面 / 背面 / 四边<br>握柄的六个面</p><p>待机与格挡模型继承原版盾姿态。<br>主手、副手分别使用原版变换。</p></section></div><div class="tools"><div class="tool"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAd0lEQVR42mNgGLTg20nX/yDsN9vmP4xNkuY/L6vAGGQAjA0SX1EtTZxhMMUwjG4IyV5CNoRkA0KMpf9X+Wn8B9EkG4KsGdklRBmArpkkA7BpJtoAXJqJMgCfZmRDcNoev97uP9nJ95G10f8fl73+g2iKDKFrpgMAT/SgBOC6R7YAAAAASUVORK5CYII="><div>金苹果镐<small>原版工具手持模型</small></div></div><div class="tool"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcUlEQVR42mNgoAf4dtL1PwiTrfnPyyowJtkQZM0kG4Cu2W+2zf8V1dLEGwJSjG4AiAaJE+0KkGIYhnmBZENCjKX/V/lp/AfRMNcQbQCyZmQXkaWZJDBwmkEgfr3df7LT/CNro/8/Lnv9B9EUGcJATwAAiQ2R5HJEUc0AAAAASUVORK5CYII="><div>金苹果斧<small>原版工具手持模型</small></div></div><div class="tool"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAX0lEQVR42mNgGFLg20nX/yC8olr6P1ma/7ysgmOSDEHW7DfbhjQDsGkm2QUgxWQ7P8RY+n+Vn8Z/EE2RZphLyNZMEhg4zSAQv97uP9lJ9ZG10f8fl73+g2iKDKFrBgMAvjl6okZ28QQAAAAASUVORK5CYII="><div>金苹果锹<small>原版工具手持模型</small></div></div><div class="tool"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYUlEQVR42mNgoCX4dtL1PwyTpfnPy6r/frNtwDRZhqyolv4PwiADYIaA+CQbhs0QslwDM4RkA0KMpf9X+Wn8B9EUaSbZ2SNRMwjEr7f7T3baf2Rt9P/HZa//IJoiQxjoCQAvwHKEoorabwAAAABJRU5ErkJggg=="><div>金苹果锄<small>原版工具手持模型</small></div></div></div><footer>由项目实际贴图与原版 ShieldModel 尺寸绘制的资源预览 · 非游戏截图</footer></main>
+<script>
+let texture,zoom=14;
+function scene(){return [
+ {x:0,y:8,z:1.5,w:12,h:22,d:1,u:0,v:0,inflate:0,texture},
+ {x:0,y:8,z:-2,w:2,h:6,d:6,u:26,v:0,inflate:0,texture}
+]}
+function render(canvas,yaw){
+ const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+ ctx.clearRect(0,0,W,H);
+ const pitch=.18,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ function project([x,y,z]){const rx=x*cy+z*sy,rz=-x*sy+z*cy;return [W/2+rx*zoom,H/2+(y-8)*cp*zoom+rz*sp*zoom,rz*cp-(y-8)*sp]}
+ const polygons=[];
+ for(const b of scene()){
+  const {w,h,d,u,v,inflate:i}=b,xx=w/2+i,yy=h/2+i,zz=d/2+i;
+  const faces=[
+   {uv:[u+d,v+d,w,h],a:[-xx,-yy,zz],du:[2*xx,0,0],dv:[0,2*yy,0],shade:1},
+   {uv:[u+2*d+w,v+d,w,h],a:[xx,-yy,-zz],du:[-2*xx,0,0],dv:[0,2*yy,0],shade:.9},
+   {uv:[u,v+d,d,h],a:[-xx,-yy,-zz],du:[0,0,2*zz],dv:[0,2*yy,0],shade:.8},
+   {uv:[u+d+w,v+d,d,h],a:[xx,-yy,zz],du:[0,0,-2*zz],dv:[0,2*yy,0],shade:.85},
+   {uv:[u+d,v,w,d],a:[-xx,-yy,-zz],du:[2*xx,0,0],dv:[0,0,2*zz],shade:1.04},
+   {uv:[u+d+w,v,w,d],a:[-xx,yy,zz],du:[2*xx,0,0],dv:[0,0,-2*zz],shade:.7},
+  ];
+  for(const f of faces){
+   const [tu,tv,tw,th]=f.uv;
+   const point=(s,t)=>project(f.a.map((q,k)=>{let a=q+f.du[k]*s+f.dv[k]*t;if(k===0&&b.mirror)a=-a;return a+[b.x,b.y,b.z][k]}));
+   for(let y=0;y<th;y++)for(let x=0;x<tw;x++){
+    let rgb;
+    if(b.solid)rgb=[...b.solid.slice(1).matchAll(/../g)].map(m=>parseInt(m[0],16));
+    else {const p=((tv+y)*b.texture.w+tu+x)*4;if(b.texture.data[p+3]<128)continue;rgb=Array.from(b.texture.data.slice(p,p+3))}
+    const points=[point(x/tw,y/th),point((x+1)/tw,y/th),point((x+1)/tw,(y+1)/th),point(x/tw,(y+1)/th)];
+    polygons.push({points,depth:points.reduce((a,p)=>a+p[2],0)/4,color:`rgb(${rgb.map(n=>Math.min(255,Math.round(n*f.shade))).join(',')})`});
+   }
+  }
+ }
+ // Orthographic, pixel-face painter: texture transparency is respected.
+ polygons.sort((a,b)=>a.depth-b.depth);
+ ctx.fillStyle='#11170f';ctx.beginPath();ctx.ellipse(W/2,H/2+17*zoom,105,15,0,0,Math.PI*2);ctx.fill();
+ for(const p of polygons){ctx.fillStyle=p.color;ctx.strokeStyle=p.color;ctx.lineWidth=.5;ctx.beginPath();p.points.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.closePath();ctx.fill();ctx.stroke()}
+}
+
+const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=64;c.height=64;const g=c.getContext('2d');g.drawImage(im,0,0);texture={w:64,h:64,data:g.getImageData(0,0,64,64).data};render(document.querySelector('#front'),-.45);render(document.querySelector('#back'),Math.PI+.55);window.previewReady=true};im.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABF0lEQVR42u3YMQrCMBTG8d6jB9DNwVXcXBw6uTl4AG9QvYkXcPMaOnsKLyAOQjTCg1gaS0pj0+T/g6A0gfZ9jU9tlr09b6VyGcdd7jSyH1zWeuFaTNthO/9qmquyGCt57S2ANndfX7B58bb3gwlgf16r4jBT98via+hjei7qAKR4WwASgqyXOR1KdX3dXPAB6AIn25G1GD2n13S9A4JpgvIZtwUgd7RtAL6a6GACaFrTNP/3ADan+eczn2wA+qRJ7gCzy9d1/KgDsH29yfHom6BZaNcBZKGy7YDHdZleANUQzOKTCcBsftUwkgnAxw8hAiCAyALo6u8wOyC0AP79SCyYAPp6KAoAAAAAAAAAAAAAAAAAAABPXsG4lMgB4X/BAAAAAElFTkSuQmCC";
+</script></html>

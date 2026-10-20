@@ -1,0 +1,23 @@
+{
+  "item.gas.golden_apple_sword": "金苹果剑",
+  "item.gas.golden_apple_helmet": "金苹果头盔",
+  "item.gas.golden_apple_chestplate": "金苹果胸甲",
+  "item.gas.golden_apple_leggings": "金苹果护腿",
+  "item.gas.golden_apple_boots": "金苹果靴子",
+  "item.gas.golden_apple_pickaxe": "金苹果镐",
+  "item.gas.golden_apple_axe": "金苹果斧",
+  "item.gas.golden_apple_shovel": "金苹果锹",
+  "item.gas.golden_apple_hoe": "金苹果锄",
+  "item.gas.golden_apple_shield": "金苹果盾",
+  "item.gas.golden_apple_bow": "金苹果弓",
+  "itemGroup.gas.golden_apple_set": "金苹果套装",
+  "entity.gas.golden_apple_farmer": "金苹果农夫",
+  "item.gas.golden_apple_farmer_spawn_egg": "金苹果农夫刷怪蛋",
+  "biome.gas.golden_realm": "黄金原野",
+  "tooltip.gas.armor.full_set": "金苹果套装（需穿齐四件）",
+  "tooltip.gas.armor.bonus": "+6 生命上限，持续生命恢复 I",
+  "block.gas.golden_apple_grass_block": "金苹果草方块",
+  "block.gas.golden_apple_dirt": "金苹果泥土",
+  "block.gas.golden_apple_stone": "金苹果石头",
+  "block.gas.golden_apple_cobblestone": "金苹果圆石"
+}

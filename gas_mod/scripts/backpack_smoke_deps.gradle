@@ -1,0 +1,14 @@
+// Local, opt-in QA dependencies only. Never included in published GAS artifacts.
+allprojects { p ->
+    afterEvaluate {
+        p.repositories { flatDir { dirs p.file('libs/compat') } }
+        p.dependencies {
+            runtimeOnly p.fg.deobf('local:sophisticatedcore:1.20.1-1.5.12.2412')
+            runtimeOnly p.fg.deobf('local:sophisticatedbackpacks:1.20.1-3.26.12.2206')
+        }
+        p.minecraft.runs.client {
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', p.file('build/createSrgToMcp/output.srg').absolutePath
+        }
+    }
+}

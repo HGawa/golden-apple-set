@@ -1,0 +1,23 @@
+{
+  "item.gas.golden_apple_sword": "Golden Apple Sword",
+  "item.gas.golden_apple_helmet": "Golden Apple Helmet",
+  "item.gas.golden_apple_chestplate": "Golden Apple Chestplate",
+  "item.gas.golden_apple_leggings": "Golden Apple Leggings",
+  "item.gas.golden_apple_boots": "Golden Apple Boots",
+  "item.gas.golden_apple_pickaxe": "Golden Apple Pickaxe",
+  "item.gas.golden_apple_axe": "Golden Apple Axe",
+  "item.gas.golden_apple_shovel": "Golden Apple Shovel",
+  "item.gas.golden_apple_hoe": "Golden Apple Hoe",
+  "item.gas.golden_apple_shield": "Golden Apple Shield",
+  "item.gas.golden_apple_bow": "Golden Apple Bow",
+  "itemGroup.gas.golden_apple_set": "Golden Apple Set",
+  "entity.gas.golden_apple_farmer": "金苹果农夫",
+  "item.gas.golden_apple_farmer_spawn_egg": "金苹果农夫刷怪蛋",
+  "biome.gas.golden_realm": "黄金原野",
+  "tooltip.gas.armor.full_set": "Golden Apple Set (all 4 pieces required)",
+  "tooltip.gas.armor.bonus": "+6 maximum health and continuous Regeneration I",
+  "block.gas.golden_apple_grass_block": "Golden Apple Grass Block",
+  "block.gas.golden_apple_dirt": "Golden Apple Dirt",
+  "block.gas.golden_apple_stone": "Golden Apple Stone",
+  "block.gas.golden_apple_cobblestone": "Golden Apple Cobblestone"
+}
